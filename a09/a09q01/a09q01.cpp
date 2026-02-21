@@ -1,0 +1,46 @@
+// Name: aoro
+// File: a09q01.cpp
+//
+// Description:
+// 
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+int main()
+{
+    std::cout << "Enter a(start) and b(end) integer value: ";
+    int a, b;
+    std::cin >> a >> b;
+    
+
+    std::cout << "Enter c(start) and d(end) powers for integers: ";
+    int c, d;
+    std::cin >> c >> d;
+
+    std::cout << std::right << std::setw(6) << ' ';
+    for(int i = c; i <= d; ++i)
+    {
+
+        std::cout << std::right << std::setw(15) << i;
+    }
+    std::cout << '\n';
+    int dx = (d - c) + 1;
+    int distance = dx * 15;
+    std::cout << std::right << std::setw(6) << ' ' << std::setw(distance)<< std::setfill('-') << "" << '\n';
+        std::cout << std::setfill(' ');
+
+    for (int i = a; i <= b; i++)
+    {
+        std::cout << std::right << std::setw(5) << i << '|';
+        for (int j = c; j <= d; ++j)
+        {
+            
+        std::cout << std::right << std::setw(15) << int(pow(i, j));
+                
+        }
+        std::cout << '\n';
+    }
+    return 0;
+}
